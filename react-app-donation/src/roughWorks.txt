@@ -1,0 +1,47 @@
+App Structure
+-------------
+
+* src
+-----* actions
+|    |
+|    |-- api.js (handle all http request) -- Command to insyal the axios(npm i -s axios)
+|    |-- dCandidate.js (Redux actions & action creators)
+|    |-- store.js (configure redux store)
+|    
+-----* components
+|    |
+|    |-- DCandidateForm.js (form operation)
+|    |-- Dcandidates.js (list of recrods)
+|    |-- useForm.js (handles common for operations)
+|    
+-----* reducers
+|    |
+|    |-- dCandidate.js
+|    |-- index.js
+|    
+|---- App.js
+|---- Index.js
+|---- index.css
+
+
+packages to install
+redux. react-redux, redux-thunk
+
+action - create, update, delete, list
+reducers
+store
+
+component -> dispatch(action) -> reducer -> component
+
+Commands to install the packages (npm i -s redux react-redux redux-thunk)
+
+To Connect the React with API, it's necessary to instal the below package:
+Microsoft.AspNetCore.Cors
+
+UI
+
+Install the packages 
+npm i -s @material-ui/core @material-ui/icons
+
+Para as notificacoes instalar o package abaixo.
+npm i -s react-tosts-notifications
