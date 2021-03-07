@@ -1,10 +1,12 @@
 .cards {
   padding: 4rem;
-  background: #fff;
+  background: #e0e0e0;
+  /* opacity: 0.9; */
 }
 
 h1 {
   text-align: center;
+  font-size: 45px;
 }
 
 .cards__container {
@@ -48,6 +50,7 @@ h1 {
   position: relative;
   width: 100%;
   padding-top: 67%;
+  opacity: 0.9;
   overflow: hidden;
 }
 
@@ -60,16 +63,15 @@ h1 {
   content: attr(data-category);
   position: absolute;
   bottom: 0;
-  margin-left: 10px;
-  padding: 6px 8px;
+  margin-left: 20px;
+  padding: 10px 20px;
   max-width: calc((100%) - 60px);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 25px;
+  font-weight: 800;
   color: #fff;
-  background-color: #1f98f4;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, #ea1d63 200%);
   box-sizing: border-box;
 }
-
 .cards__item__img {
   position: absolute;
   top: 0;
@@ -83,6 +85,7 @@ h1 {
   max-height: 100%;
   object-fit: cover;
   transition: all 0.2s linear;
+  opacity: 0.8;
 }
 
 .cards__item__img:hover {
@@ -97,6 +100,11 @@ h1 {
   color: #252e48;
   font-size: 18px;
   line-height: 24px;
+}
+.sub_title_home {
+  opacity: 0.8;
+  size: 100%;
+  margin-top: 10px;
 }
 
 @media only screen and (min-width: 1200px) {
