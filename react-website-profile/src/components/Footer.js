@@ -64,52 +64,29 @@ function Footer() {
         <div class='social-media-wrap'>
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
-              TRVL
-              <i class='fab fa-typo3' />
+              <i class="fa fa-code" aria-hidden="true"></i>&nbsp;Renan Buzzi&nbsp; <i class="fa fa-code" aria-hidden="true"></i>
             </Link>
           </div>
-          <small class='website-rights'>TRVL © 2020</small>
+          <small class='website-rights'>Renan Buzzi © 2021</small>
           <div class='social-icons'>
-            <Link
-              class='social-icon-link facebook'
-              to='/'
-              target='_blank'
-              aria-label='Facebook'
-            >
-              <i class='fab fa-facebook-f' />
-            </Link>
-            <Link
-              class='social-icon-link instagram'
-              to='/'
-              target='_blank'
-              aria-label='Instagram'
-            >
-              <i class='fab fa-instagram' />
-            </Link>
-            <Link
-              class='social-icon-link youtube'
-              to='/'
-              target='_blank'
-              aria-label='Youtube'
-            >
-              <i class='fab fa-youtube' />
-            </Link>
-            <Link
-              class='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='Twitter'
-            >
-              <i class='fab fa-twitter' />
-            </Link>
-            <Link
-              class='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='LinkedIn'
-            >
-              <i class='fab fa-linkedin' />
-            </Link>
+            <a class='social-icon-link facebook' 
+               href="https://www.facebook.com/renan.buzzi" 
+               target="_blank"
+               aria-label='Facebook'>
+                  <i class='fab fa-facebook-f' />
+            </a>
+            <a class='social-icon-link instagram' 
+               href="https://www.instagram.com/buzzirenan/" 
+               target="_blank"
+               aria-label='Instagram'>
+                  <i class='fab fa-instagram' />
+            </a>
+            <a class='social-icon-link linkedin' 
+               href="https://www.linkedin.com/in/renangasparbuzzi" 
+               target="_blank"
+               aria-label='Linkedin'>
+                  <i class='fab fa-linkedin' />
+            </a>
           </div>
         </div>
       </section>
