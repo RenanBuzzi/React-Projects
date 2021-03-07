@@ -61,7 +61,7 @@ function Navbar() {
             </li>
             <li className='nav-item'>
               <Link
-                to='/experiences'
+                to='/Jobexperiences'
                 className='nav-links'
                 onClick={closeMobileMenu}>
                 Job Experiences
