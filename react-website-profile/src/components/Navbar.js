@@ -76,11 +76,6 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
-            <div>                                
-             {/* <a href="https://www.facebook.com/renan.buzzi" class="fa fa-facebook" onLoad={handleShow == true} class="visible"></a> */}
-            {/* {handleShow === true && <a href="https://www.linkedin.com/in/renangasparbuzzi" class="fab fa-linkedin" hidden="{handleShow}"></a>}
-            {handleShow === true && <a href="https://www.facebook.com/renan.buzzi" class="fa fa-facebook"></a>} */}
-            </div>
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
