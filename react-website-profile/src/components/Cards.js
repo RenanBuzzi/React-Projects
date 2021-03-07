@@ -26,10 +26,10 @@ function Cards() {
           </ul>
           <ul className='cards__items'>
             <CardItem
-              src='images/img-3.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
-              path='/jobexperieces'
+              src='images/contactme2.jpg'
+              text='Feel free to contact me anytime.'
+              label='Contact'
+              path='/Contact'
             />
             <CardItem
               src='images/img-4.jpg'

@@ -2,13 +2,13 @@ import React from 'react';
 import '../../App.css';
 import './About.css';
 import Footer from '../Footer';
-import DescriptionProfile from '../Pages/DescriptionProfile';
+import AboutMeHeader from '../Pages/AboutMeHeader';
 
 
 function About (){
     return(
         <>
-        <DescriptionProfile/>
+        <AboutMeHeader/>
         <Footer />
         </>
     )
