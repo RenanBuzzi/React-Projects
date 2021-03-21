@@ -1,12 +1,15 @@
 import React from 'react';
+import * as ReactDOM from 'react-dom';
 import Game from './Game';
 import './App.css';
+ReactDOM.render(<App />, document.getElementById('root'));
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Everyone</h1>
-      <Game />
+      <div className="h1">Tic-Tac-Toe</div>
+      {/* <Game /> */}
+      <Game/>
     </div>
   );
 }

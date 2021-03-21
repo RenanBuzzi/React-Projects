@@ -5,8 +5,8 @@
 
 .Game {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 }
 
 .Game__menu {
@@ -22,8 +22,10 @@
 }
 
 .Game__board {
-  width: 100%;
-  height: 100%;
+  padding-top: 3%;
+  width: 600px;
+  height: 600px;
+  padding-left: 30%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -32,4 +34,15 @@
   border: 1px solid #ddd;
   font-size: 4rem;
   line-height: 0;
+}
+
+.buttoes {
+  background: rgb(116, 91, 79);
+  color: burlywood;
+  size: 100px;
+}
+
+.p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
 }
