@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import './Game.css';
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-
-
+toast.configure()
 function getInitialState(){
     const state = {};
     for (let r=0; r < 3; r++){
@@ -121,13 +122,14 @@ return(
             </div>
             {(winner || itsAtie) && (
                <div className="Game__menu">
-               {winner ? (
-                <p>O Ganhador e {winner > 0 ? 'O' : 'X'}</p>   
-               ): (
-                    <p>O Ganhador e {winner > 0 ? 'O' : 'X'}</p>   
-               )}
-                
-                <button onClick={reset}>Reininiar</button>
+                    {winner ? (
+                        toast(<p>O Ganhador e {winner > 0 ? 'O' : 'X'}</p>),
+                        <button onClick={reset}>Reininiar</button>
+                    ): (
+                        toast(<p>Houve um empate</p>),
+                        <button onClick={reset}>Reininiar</button>
+                    )}
+               
            </div>
             )}
            
