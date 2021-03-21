@@ -214,4 +214,9 @@
   .hidden {
     display: none;
   }
+  @media screen and (max-width: 960px) {
+    .navbar-logo img {
+      display: none;
+    }
+  }
 }

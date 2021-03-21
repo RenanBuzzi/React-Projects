@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { render } from '@testing-library/react';
 
+
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);  
@@ -32,8 +33,12 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          <i class="fa fa-code" aria-hidden="true"></i>&nbsp;Renan Buzzi&nbsp; <i class="fa fa-code" aria-hidden="true"></i>
+          <i class="fa fa-code" aria-hidden="true"></i>
+          &nbsp;Renan Buzzi&nbsp; 
+          <i class="fa fa-code" aria-hidden="true"></i> 
+          {/* <img className="navbar-logo" src={Logo}/> */}
           </Link>
+          
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fa fa-times' : 'fa fa-bars'} />
           </div>
