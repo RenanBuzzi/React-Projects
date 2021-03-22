@@ -1,0 +1,48 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Game__menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: rgba(255, 255, 255, 100);
+  border-radius: 18px;
+  padding: 15px;
+}
+
+.Game__board {
+  padding-top: 3%;
+  width: 600px;
+  height: 600px;
+  padding-left: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Game__board button {
+  border: 1px solid #ddd;
+  font-size: 5rem;
+  line-height: 0;
+}
+
+.buttoes {
+  background: rgb(116, 91, 79);
+  color: burlywood;
+  size: 100px;
+}
+
+.p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
+}
