@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react'
 import './Game.css';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -64,6 +64,10 @@ const Game = () => {
     const [values, setValues] = useState(getInitialState);
     const [player, setPlayer] = useState(1);
     const [winner, setWinner] = useState(null);
+    const itsATie = Object
+                .values(values)
+                .filter(Boolean)
+                .length === 9 && !winner;
 
 
 function handleClick(Key){
@@ -89,27 +93,16 @@ function reset(){
     setPlayer(1);
 }
 
-function CheckWinner(){
-    const toastId = React.useRef(null);
-    if(!toast.isActive(toastId.current)) {      
-            {if(winner || itsATie)(
-                <div className="Game__menu">
-                    {winner ? (
-                        toastId.current = toast(<p>O Ganhador e {winner > 0 ? 'O' : 'X'}</p>),
-                        <button onClick={reset}>Reininiar</button>
-                    ): (
-                        toastId.current = toast(<p>Houve um empate</p>),
-                        <button onClick={reset}>Reininiar</button>
-                    )}
-                </div>
-            )}     
-        }    
-}
+useEffect(() => {
+    if (winner) {
+      toast(<p>O Ganhador e {winner > 0 ? 'O' : 'X'}</p>)
+    }
 
-const itsATie = Object
-                .values(values)
-                .filter(Boolean)
-                .length === 9 && !winner;
+    if (itsATie) {
+      toast(<p>Houve um empate</p>)
+    }
+  }, [winner, itsATie])
+
 
 return(
         <div className="Game">
@@ -127,7 +120,7 @@ return(
                             </button>    
                     )})};
             </div>
-            {CheckWinner()}
+            {(winner || itsATie) && <button onClick={reset}>Reininiar</button>}
         </div>
     )
 }
