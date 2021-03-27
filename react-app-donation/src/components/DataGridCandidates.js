@@ -22,7 +22,7 @@ const style = theme => ({
 })
 
 
-const DCandidates = ({classes, ...props}) => {
+const DataGridCandidates = ({classes, ...props}) => {
 
     //toast msg.
     const { addToast } = useToasts()
@@ -34,11 +34,11 @@ const DCandidates = ({classes, ...props}) => {
         props.fetchAllDCandidates()
     }, [] = useState(0))
 
-
-const onDelete = id => {
-    if(window.confirm('Are you sure to delete this message?'))
-    props.deleteDCandidate(id, () => addToast("Deleted successfully", { appearance: 'info' }))
-}
+    /*Delete record by ID*/
+    const onDelete = id => {
+        if(window.confirm('Are you sure to delete this message?'))
+        props.deleteDCandidate(id, () => addToast("Deleted successfully", { appearance: 'info' }))
+    }
 
     return(
         <Paper className={classes.paper} elevation={3}>
@@ -103,5 +103,5 @@ const mapActionToProps = {
     deleteDCandidate: actions.Delete
 }
 
-export default connect(mapStateToProps,mapActionToProps)(withStyles(style)(DCandidates));
+export default connect(mapStateToProps,mapActionToProps)(withStyles(style)(DataGridCandidates));
 
