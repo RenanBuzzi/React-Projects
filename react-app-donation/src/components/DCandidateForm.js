@@ -1,25 +1,38 @@
+import clsx from 'clsx';
 import { Grid, InputLabel, Select, TextField, withStyles, MenuItem, FormControl, Button, FormHelperText } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import useForm from "./useForm";
 import { connect } from "react-redux";
 import * as actions from "../actions/dCandidate";
 import { useToasts } from "react-toast-notifications";
+import { purple } from "@material-ui/core/colors";
 
 
 /*Overwritening the TextBoxField, CSS spacing between the components*/
 const styles = theme => ({
-    root:{
-    '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        minWith:230,
-        }
-    },
+    root: {
+        '& .MuiTextField-root': {
+          margin: theme.spacing(1),
+          flexWrap: 'wrap',
+          minWith:230
+        },
+        textField: {
+            width: '30ch',
+          },
+      },
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 170,
+        minWidth: 210,
     },
     smMargin: {
-        margin: theme.spacing(1)
+        margin: theme.spacing(1.5),
+        primary: {
+            main: purple[500],
+          },
+          secondary: {
+            main: '#f44336',
+          },
+
     }
 })
 
@@ -108,13 +121,14 @@ const DCandidatesForm = ({classes, ...props}) => {
     return(
         <form autoComplete="off" noValidate className={classes.root} onSubmit={handleSubmit}>
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                     <TextField
                         name="fullName"
                         variant="outlined"
                         label="Full Name"
                         value={values.fullName}
                         onChange={handleInputChange}
+                        className={clsx(classes.margin, classes.textField)}
                         {...(errors.fullName && { error: true, helperText: errors.fullName })}                   
                     />
                      <TextField
@@ -122,6 +136,7 @@ const DCandidatesForm = ({classes, ...props}) => {
                         variant="outlined"
                         label="Email"
                         value={values.email}
+                        id="outlined-start-adornment"
                         onChange={handleInputChange}
                         {...(errors.email && { error: true, helperText: errors.email })}                   
                     />
@@ -151,7 +166,7 @@ const DCandidatesForm = ({classes, ...props}) => {
                         {errors.bloodGroup && <FormHelperText>{errors.bloodGroup}</FormHelperText>}
                     </FormControl>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12}>
                 <TextField
                         name="mobile"
                         variant="outlined"
@@ -187,6 +202,7 @@ const DCandidatesForm = ({classes, ...props}) => {
                             variant="contained"
                             className={classes.smMargin}
                             onClick={resetForm}
+                            color="secondary"
                         >
                             Reset
                         </Button>

@@ -43,18 +43,19 @@ const DataGridCandidates = ({classes, ...props}) => {
     return(
         <Paper className={classes.paper} elevation={3}>
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xl={12}>
                 <DCandidateForm {...({ currentId, setCurrentId })}></DCandidateForm>
                 </Grid>
-                <Grid item xs={6}>
+            </Grid>
+            <Paper className={classes.paper} elevation={10}>
+            <Grid container>
+            <Grid item xs={12}>
                 <TableContainer>
                     <Table>
                         <TableHead className={classes.root} >
                             <TableRow>
                                 <TableCell>Name</TableCell>
                                 <TableCell>Mobile</TableCell>
-                                {/* <TableCell>Email</TableCell>
-                                <TableCell>Age</TableCell> */}
                                 <TableCell>Blood Group</TableCell>
                                 <TableCell></TableCell>
                             </TableRow>
@@ -90,6 +91,7 @@ const DataGridCandidates = ({classes, ...props}) => {
                 </TableContainer>
                 </Grid>
             </Grid>
+            </Paper>
         </Paper>
     );
 }
