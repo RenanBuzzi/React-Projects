@@ -6,6 +6,7 @@ import DCandidateForm from "./DCandidateForm";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useToasts } from "react-toast-notifications";
+import TablePagination from '@material-ui/core/TablePagination';
 
 const style = theme => ({
     /*overwriting the existing CSS*/
@@ -40,6 +41,25 @@ const DataGridCandidates = ({classes, ...props}) => {
         props.deleteDCandidate(id, () => addToast("Deleted successfully", { appearance: 'info' }))
     }
 
+    /*Paginator Material UI*/
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [rows, setRows] = useState(0);
+
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    }
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+      };
+
+    const emptyRows = 
+            rowsPerPage - Math.min(rowsPerPage, setRows - page * rowsPerPage);     
+   
+    
+    
     return(
         <Paper className={classes.paper} elevation={3}>
             <Grid container>
@@ -61,15 +81,15 @@ const DataGridCandidates = ({classes, ...props}) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {
-                                props.dCandidateList.map((record, index) => {
-                                    return (<TableRow Key={index} hover>
+                            {                                
+                                props.dCandidateList
+                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                .map((record, index) => {
+                                    return (
+                                            <TableRow Key={index} hover>
                                                 <TableCell>{record.fullName}</TableCell>
                                                 <TableCell>{record.mobile}</TableCell>
-                                                {/* <TableCell>{record.email}</TableCell>
-                                                <TableCell>{record.age}</TableCell> */}
                                                 <TableCell>{record.bloodGroup}</TableCell>
-                                                {/* <TableCell>{record.address}</TableCell> */}
                                                 <TableCell>
                                                 <ButtonGroup variant="text">
                                                     <Button><EditIcon color="primary"
@@ -82,12 +102,25 @@ const DataGridCandidates = ({classes, ...props}) => {
                                                         />
                                                     </Button>
                                                 </ButtonGroup>
-                                            </TableCell>
+                                                </TableCell>
                                             </TableRow>)
                                 })
                             }
+                            {emptyRows > 0 && (
+                                <TableRow style={{height:53 * emptyRows}}>
+                                    <TableCell colSpan={6}/>
+                                </TableRow>
+                            )}
                         </TableBody>
                     </Table>
+                    <TablePagination
+                    component="div"
+                    count={100}
+                    page={page}
+                    onChangePage={handleChangePage}
+                    rowsPerPage={rowsPerPage}
+                    onChangeRowsPerPage={handleChangeRowsPerPage}
+                />
                 </TableContainer>
                 </Grid>
             </Grid>
