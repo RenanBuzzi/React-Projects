@@ -35,6 +35,13 @@
   font-size: 5rem;
   line-height: 0;
 }
+.Game__board button:hover {
+  opacity: 0.8;
+  background: rgb(58, 25, 10);
+}
+.Game__board button:focus {
+  background-color: rgb(218, 100, 45);
+}
 
 .buttoes {
   background: rgb(116, 91, 79);

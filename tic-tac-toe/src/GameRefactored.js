@@ -56,8 +56,6 @@ export default function GameRefactored() {
     const [values, setValues] = useState(state);
     const [player, setPlayer] = useState(1);
     const [winner, setWinner] = useState(null);
-  
-
     const itsATie = Object
                 .values(values)
                 .filter(Boolean)
@@ -98,11 +96,6 @@ useEffect(() => {
                  }
   }, [winner, itsATie])
 
-  const [showModal, setShowModal] = useState(false);
-
-  const openModel = () => {
-      setShowModal(prev => prev)
-  }
 
 return(
          <div className="Game">
@@ -118,12 +111,8 @@ return(
                             {getLabel(values[Key])}
                             </button>
                     )})};
-                   
             </div>
-            {(winner || itsATie) && 
-                <button onClick={reset}>Reininiar</button>
-            }
+            {(winner || itsATie) && <button onClick={reset}>Reininiar</button>}
         </div>
-        
     )
 }
