@@ -15,7 +15,6 @@ const style = theme => ({
             fontSize: "1.25rem"
         }
     },
-
     paper:{
         margin: theme.spacing(2),
         padding: theme.spacing(2)
@@ -43,7 +42,7 @@ const DataGridCandidates = ({classes, ...props}) => {
 
     /*Paginator Material UI*/
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
     const [rows, setRows] = useState(0);
 
     const handleChangePage = (event, newPage) => {
@@ -54,12 +53,20 @@ const DataGridCandidates = ({classes, ...props}) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
       };
+   
+    const counter = () => {
+        let countRows = 0;
+    }
+
+    /*count rows from datatable*/
+    const countRows = props.dCandidateList.filter(rows => rows)
+    const numRows = countRows.length
 
     const emptyRows = 
-            rowsPerPage - Math.min(rowsPerPage, setRows - page * rowsPerPage);     
+            rowsPerPage - Math.min(rowsPerPage, numRows - page * rowsPerPage);     
    
     
-    
+
     return(
         <Paper className={classes.paper} elevation={3}>
             <Grid container>
@@ -81,7 +88,7 @@ const DataGridCandidates = ({classes, ...props}) => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {                                
+                            {               
                                 props.dCandidateList
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((record, index) => {
@@ -93,7 +100,7 @@ const DataGridCandidates = ({classes, ...props}) => {
                                                 <TableCell>
                                                 <ButtonGroup variant="text">
                                                     <Button><EditIcon color="primary"
-                                                      onClick={() => { setCurrentId(record.id) }} 
+                                                      onClick={() => {setCurrentId(record.id)}} 
                                                     />
                                                     </Button>
                                                     <Button>
@@ -103,7 +110,8 @@ const DataGridCandidates = ({classes, ...props}) => {
                                                     </Button>
                                                 </ButtonGroup>
                                                 </TableCell>
-                                            </TableRow>)
+                                            </TableRow>
+                                        )
                                 })
                             }
                             {emptyRows > 0 && (
@@ -115,7 +123,7 @@ const DataGridCandidates = ({classes, ...props}) => {
                     </Table>
                     <TablePagination
                     component="div"
-                    count={100}
+                    count={numRows}
                     page={page}
                     onChangePage={handleChangePage}
                     rowsPerPage={rowsPerPage}
@@ -132,6 +140,8 @@ const DataGridCandidates = ({classes, ...props}) => {
 const mapStateToProps = state => ({
     dCandidateList: state.dCandidate.list
 })
+
+
 
 const mapActionToProps = {
     fetchAllDCandidates: actions.fetchAll,
