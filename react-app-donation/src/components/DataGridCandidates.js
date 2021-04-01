@@ -21,7 +21,6 @@ const style = theme => ({
     }
 })
 
-
 const DataGridCandidates = ({classes, ...props}) => {
 
     //toast msg.
@@ -53,20 +52,13 @@ const DataGridCandidates = ({classes, ...props}) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
       };
-   
-    const counter = () => {
-        let countRows = 0;
-    }
 
     /*count rows from datatable*/
-    const countRows = props.dCandidateList.filter(rows => rows)
-    const numRows = countRows.length
+    const numRows = props.dCandidateList.filter(rows => rows).length
 
     const emptyRows = 
             rowsPerPage - Math.min(rowsPerPage, numRows - page * rowsPerPage);     
-   
     
-
     return(
         <Paper className={classes.paper} elevation={3}>
             <Grid container>
@@ -140,9 +132,6 @@ const DataGridCandidates = ({classes, ...props}) => {
 const mapStateToProps = state => ({
     dCandidateList: state.dCandidate.list
 })
-
-
-
 const mapActionToProps = {
     fetchAllDCandidates: actions.fetchAll,
     deleteDCandidate: actions.Delete
