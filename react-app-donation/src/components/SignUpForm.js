@@ -1,4 +1,4 @@
-import clsx from "clsx";
+// import clsx from "clsx";
 import {
   Grid,
   Paper,
@@ -13,7 +13,7 @@ import {
   FormHelperText,
 } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import useForm from "./useForm";
+import useSignUpForm from "./useSignUpForm";
 import { connect } from "react-redux";
 import * as actions from "../actions/dCandidate";
 
@@ -64,123 +64,95 @@ const btnStyle = {
   margin: "8px auto",
 };
 
-/*Main Methode*/
-const SignUpForm = ({ classes, ...props }) => {
-  //toast msg.
-  const { addToast } = useToasts();
-
-  /*Validation Form, check the UseForm and this DCandidateForm.js*/
-  const validate = (fieldValues = values) => {
-    let temp = { ...errors };
-    if ("fullName" in fieldValues)
-      temp.fullName = fieldValues.fullName ? "" : "This field is required.";
-    if ("mobile" in fieldValues)
-      temp.mobile = fieldValues.mobile ? "" : "This field is required.";
-    if ("bloodGroup" in fieldValues)
-      temp.bloodGroup = fieldValues.bloodGroup ? "" : "This field is required.";
-    if ("email" in fieldValues)
-      temp.email = /^$|.+@.+..+/.test(fieldValues.email)
-        ? ""
-        : "Email is not valid.";
-    setErrors({
-      ...temp,
-    });
-
-    if (fieldValues == values) return Object.values(temp).every((x) => x == "");
-  };
-
+/*Getting the events from UseSignUpForm*/
+const SignUpForm = () => {
   const {
+    handleChange,
+    handleNumbersChange,
     values,
-    setValues,
-    errors,
-    setErrors,
-    handleInputChange,
-    resetForm,
-  } = useForm(initialFieldValues, validate, props.setCurrentId);
+    handleSubmit,
+  } = useSignUpForm();
 
-  //material-ui select
-  const inputLabel = React.useRef(null);
-  const [labelWidth, setLabelWidth] = React.useState(0);
-  React.useEffect(() => {
-    setLabelWidth(inputLabel.current.offsetWidth);
-  }, []);
-
-  /*Submitting and Updating the form*/
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validate()) {
-      const onSuccess = () => {
-        resetForm();
-        addToast("Submitted successfully", { appearance: "success" });
-      };
-      if (props.currentId == 0) props.createDCandidate(values, onSuccess);
-      else props.updateDCandidate(props.currentId, values, onSuccess);
-    }
-
-    resetForm();
-  };
-
-  const [value, setValue] = React.useState("female");
-
-  const handleChange = (event) => {
+  const [value, setValue] = useState("female");
+  const handleGenderChange = (event) => {
     setValue(event.target.value);
   };
 
-  /*Populate form by ID*/
-  useEffect(() => {
-    if (props.currentId != 0) {
-      setValues({
-        ...props.dCandidateList.find((x) => x.id == props.currentId),
-      });
-      setErrors({});
-    }
-  }, [props.currentId]);
+  //   const [ageState, setAgeState] = useState();
+
+  //   const handleNumbersChange = (e) => {
+  //     const regex = /^[0-9\b]+$/;
+
+  //     if (e.target.value === "" || regex.test(e.target.value)) {
+  //       setAgeState(e.target.value);
+  //     }
+  //   };
 
   return (
-    <Grid container>
-      <Paper elevation={20} style={paperStyle}>
-        <Grid align="center">
-          <Avatar style={avatarStyle}>
-            <AddCircleOutlineIcon />
-          </Avatar>
-          <h2 style={headerStyle}>Sign Up</h2>
-          <Typography variant="caption">
-            Please fill this form to create an account !
-          </Typography>
-        </Grid>
-        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+    <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+      <Grid container>
+        <Paper elevation={20} style={paperStyle}>
+          <Grid align="center">
+            <Avatar style={avatarStyle}>
+              <AddCircleOutlineIcon />
+            </Avatar>
+            <h2 style={headerStyle}>Sign Up</h2>
+            <Typography variant="caption">
+              Please fill this form to create an account !
+            </Typography>
+          </Grid>
           <TextField
             name="fullName"
             fullWidth
             label="Full Name"
             placeholder="Enter with your full name !"
             value={values.fullName}
-            onChange={handleInputChange}
-            // className={clsx(classes.margin, classes.textField)}
-            {...(errors.fullName && {
-              error: true,
-              helperText: errors.fullName,
-            })}
-          ></TextField>
+            onChange={handleChange}
+            // {...(errors.fullName && {
+            //   error: true,
+            //   helperText: errors.fullName,
+            // })}
+          />
           <TextField
             name="email"
             fullWidth
             label="Email"
             placeholder="Enter with your email !"
             value={values.email}
-            onChange={handleInputChange}
-          ></TextField>
+            onChange={handleChange}
+          />
+          <TextField
+            name="mobile"
+            fullWidth
+            label="Mobile Number"
+            placeholder="Enter with your mobile number !"
+            value={values.mobile}
+            onChange={handleChange}
+          />
+          <TextField
+            name="age"
+            fullWidth
+            label="Age"
+            placeholder="Enter with your Age!"
+            value={values.ageState}
+            onChange={handleNumbersChange}
+          />
           <FormControl
-            variant="outlined"
+            fullWidth
             style={StyleDropdownliast}
-            {...(errors.bloodGroup && { error: true })}
+            // {...(errors.bloodGroup && { error: true })}
           >
-            <InputLabel ref={inputLabel}> Blood Group</InputLabel>
+            <InputLabel
+            // ref={inputLabel}
+            >
+              {" "}
+              Blood Group
+            </InputLabel>
             <Select
               name="bloodGroup"
               value={values.bloodGroup}
-              onChange={handleInputChange}
-              labelWidth={labelWidth}
+              onChange={handleChange}
+              //   labelWidth={labelWidth}
             >
               <MenuItem value="">Select Blood Group</MenuItem>
               <MenuItem value="A+">A +ve</MenuItem>
@@ -192,11 +164,18 @@ const SignUpForm = ({ classes, ...props }) => {
               <MenuItem value="O+">O +ve</MenuItem>
               <MenuItem value="O-">O -ve</MenuItem>
             </Select>
-            {errors.bloodGroup && (
+            {/* {errors.bloodGroup && (
               <FormHelperText>{errors.bloodGroup}</FormHelperText>
-            )}
+            )} */}
           </FormControl>
-
+          <TextField
+            name="address"
+            placeholder="Enter with your Address!"
+            fullWidth
+            label="Address"
+            value={values.address}
+            onChange={handleChange}
+          />
           <FormControl component="fieldset">
             <FormLabel component="legend">Gender</FormLabel>
             <RadioGroup
@@ -204,7 +183,7 @@ const SignUpForm = ({ classes, ...props }) => {
               aria-label="gender"
               name="gender"
               value={value}
-              onChange={handleChange}
+              onChange={handleGenderChange}
             >
               <FormControlLabel
                 value="female"
@@ -220,35 +199,28 @@ const SignUpForm = ({ classes, ...props }) => {
             </RadioGroup>
           </FormControl>
           <TextField
-            name="mobile"
-            fullWidth
-            label="Mobile Number"
-            placeholder="Enter with your mobile number !"
-            value={values.mobile}
-            onChange={handleInputChange}
-          ></TextField>
-          <TextField
-            name="passsword"
+            name="password"
             type="password"
             fullWidth
             label="Password"
-            placeholder="Enter with your password !"
-            // value={values.fullName}
-            onChange={handleInputChange}
-          ></TextField>
+            placeholder="Enter with your password!"
+            value={values.password}
+            onChange={handleChange}
+          />
           <TextField
-            name="cofirmPassword"
+            name="confirmPassword"
             type="password"
             fullWidth
             label="Confirm Password"
-            placeholder="Confirm your password !"
-            onChange={handleInputChange}
-          ></TextField>
+            placeholder="Confirm your password!"
+            value={values.confirmPassword}
+            onChange={handleChange}
+          />
           <FormControlLabel
             control={
               <Checkbox
-                checked={setValue.checkedA}
-                onChange={handleInputChange}
+                value={values.acceptTerms}
+                onChange={handleChange}
                 name="CheckedTerms"
               />
             }
@@ -266,13 +238,13 @@ const SignUpForm = ({ classes, ...props }) => {
             style={btnStyle}
             variant="contained"
             color="secondary"
-            onClick={resetForm}
+            // onClick={resetForm}
           >
             Reset
           </Button>
-        </form>
-      </Paper>
-    </Grid>
+        </Paper>
+      </Grid>
+    </form>
   );
 };
 
