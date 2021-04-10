@@ -101,7 +101,7 @@ const DCandidatesForm = ({ classes, ...props }) => {
         resetForm();
         addToast("Submitted successfully", { appearance: "success" });
       };
-      if (props.currentId == 0) props.createDCandidate(values, onSuccess);
+      if (props.currentId === 0) props.createDCandidate(values, onSuccess);
       else props.updateDCandidate(props.currentId, values, onSuccess);
     }
 

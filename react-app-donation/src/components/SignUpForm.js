@@ -1,8 +1,9 @@
-// import clsx from "clsx";
+import clsx from "clsx";
 import {
   Grid,
   Paper,
   Avatar,
+  withStyles,
   Typography,
   TextField,
   Checkbox,
@@ -24,6 +25,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import { useToasts } from "react-toast-notifications";
+import validade from "./validadeInfo";
 
 const initialFieldValues = {
   fullName: "",
@@ -34,7 +36,7 @@ const initialFieldValues = {
   address: "",
 };
 
-const StyleDropdownliast = {
+const StyleDropdownlist = {
   margin: "20px auto",
   minWidth: 210,
 };
@@ -64,32 +66,30 @@ const btnStyle = {
   margin: "8px auto",
 };
 
-/*Getting the events from UseSignUpForm*/
 const SignUpForm = () => {
   const {
     handleChange,
-    handleNumbersChange,
     values,
+    errors,
     handleSubmit,
-  } = useSignUpForm();
+    handleCheckBox,
+    resetForm,
+  } = useSignUpForm(validade);
 
+  // Getting Gender Value
   const [value, setValue] = useState("female");
   const handleGenderChange = (event) => {
     setValue(event.target.value);
+    values.gender = event.target.value;
   };
 
-  //   const [ageState, setAgeState] = useState();
-
-  //   const handleNumbersChange = (e) => {
-  //     const regex = /^[0-9\b]+$/;
-
-  //     if (e.target.value === "" || regex.test(e.target.value)) {
-  //       setAgeState(e.target.value);
-  //     }
-  //   };
-
   return (
-    <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+    <form
+      autoComplete="off"
+      noValidate
+      onSubmit={handleSubmit}
+      onReset={resetForm}
+    >
       <Grid container>
         <Paper elevation={20} style={paperStyle}>
           <Grid align="center">
@@ -105,68 +105,72 @@ const SignUpForm = () => {
             name="fullName"
             fullWidth
             label="Full Name"
-            placeholder="Enter with your full name !"
+            placeholder="Enter with your full name."
             value={values.fullName}
             onChange={handleChange}
-            // {...(errors.fullName && {
-            //   error: true,
-            //   helperText: errors.fullName,
-            // })}
+            {...(errors.fullName && {
+              error: true,
+              helperText: errors.fullName,
+            })}
           />
           <TextField
             name="email"
             fullWidth
             label="Email"
-            placeholder="Enter with your email !"
+            placeholder="Enter with your email."
             value={values.email}
             onChange={handleChange}
+            {...(errors.email && {
+              error: true,
+              helperText: errors.email,
+            })}
           />
           <TextField
             name="mobile"
             fullWidth
-            label="Mobile Number"
-            placeholder="Enter with your mobile number !"
+            label="Enter with your Mobile number."
+            placeholder="(00) 912345678"
             value={values.mobile}
             onChange={handleChange}
+            {...(errors.mobile && {
+              error: true,
+              helperText: errors.mobile,
+            })}
           />
           <TextField
             name="age"
             fullWidth
             label="Age"
-            placeholder="Enter with your Age!"
-            value={values.ageState}
-            onChange={handleNumbersChange}
+            placeholder="Enter with your Age."
+            value={values.age != "" ? values.age : ""}
+            onChange={handleChange}
+            {...(errors.age && {
+              error: true,
+              helperText: errors.age,
+            })}
           />
-          <FormControl
-            fullWidth
-            style={StyleDropdownliast}
-            // {...(errors.bloodGroup && { error: true })}
-          >
-            <InputLabel
-            // ref={inputLabel}
-            >
-              {" "}
-              Blood Group
-            </InputLabel>
+          <FormControl fullWidth style={StyleDropdownlist}>
+            <InputLabel>Blood Group</InputLabel>
             <Select
               name="bloodGroup"
+              placeholder="Enter with your Blood Group."
               value={values.bloodGroup}
               onChange={handleChange}
-              //   labelWidth={labelWidth}
+              {...(errors.bloodGroup && {
+                error: true,
+                helperText: errors.bloodGroup,
+              })}
             >
               <MenuItem value="">Select Blood Group</MenuItem>
-              <MenuItem value="A+">A +ve</MenuItem>
-              <MenuItem value="A-">A -ve</MenuItem>
-              <MenuItem value="B+">B +ve</MenuItem>
-              <MenuItem value="B-">B -ve</MenuItem>
-              <MenuItem value="AB+">AB +ve</MenuItem>
-              <MenuItem value="AB-">AB -ve</MenuItem>
-              <MenuItem value="O+">O +ve</MenuItem>
-              <MenuItem value="O-">O -ve</MenuItem>
+              <MenuItem value="A+">A+</MenuItem>
+              <MenuItem value="A-">A-</MenuItem>
+              <MenuItem value="B+">B+</MenuItem>
+              <MenuItem value="B-">B-</MenuItem>
+              <MenuItem value="AB+">AB+</MenuItem>
+              <MenuItem value="AB-">AB-</MenuItem>
+              <MenuItem value="O+">O+</MenuItem>
+              <MenuItem value="O-">O-</MenuItem>
             </Select>
-            {/* {errors.bloodGroup && (
-              <FormHelperText>{errors.bloodGroup}</FormHelperText>
-            )} */}
           </FormControl>
           <TextField
             name="address"
@@ -175,6 +179,10 @@ const SignUpForm = () => {
             label="Address"
             value={values.address}
             onChange={handleChange}
+            {...(errors.address && {
+              error: true,
+              helperText: errors.address,
+            })}
           />
           <FormControl component="fieldset">
             <FormLabel component="legend">Gender</FormLabel>
@@ -206,6 +214,10 @@ const SignUpForm = () => {
             placeholder="Enter with your password!"
             value={values.password}
             onChange={handleChange}
+            {...(errors.password && {
+              error: true,
+              helperText: errors.password,
+            })}
           />
           <TextField
             name="confirmPassword"
@@ -215,17 +227,31 @@ const SignUpForm = () => {
             placeholder="Confirm your password!"
             value={values.confirmPassword}
             onChange={handleChange}
+            {...(errors.confirmPassword && {
+              error: true,
+              helperText: errors.confirmPassword,
+            })}
           />
           <FormControlLabel
             control={
               <Checkbox
-                value={values.acceptTerms}
-                onChange={handleChange}
-                name="CheckedTerms"
+                defaultChecked={values.checked}
+                checked={values.checked}
+                onChange={handleCheckBox}
+                name="acceptTerms"
               />
             }
             label="I accept the terms and condictions"
           />
+          <FormHelperText
+            {...(errors.acceptTerms && {
+              error: true,
+              helperText: errors.acceptTerms,
+            })}
+          >
+            {errors.acceptTerms}
+          </FormHelperText>
+
           <Button
             style={btnStyle}
             type="submit"
@@ -235,10 +261,11 @@ const SignUpForm = () => {
             Sign Up
           </Button>
           <Button
+            type="reset"
             style={btnStyle}
             variant="contained"
             color="secondary"
-            // onClick={resetForm}
+            onChange={handleChange}
           >
             Reset
           </Button>

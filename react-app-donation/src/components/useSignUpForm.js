@@ -1,41 +1,54 @@
+import { SettingsInputAntennaTwoTone } from "@material-ui/icons";
 import { useState, useEffect } from "react";
 
-const useSignUpForm = () => {
+const useSignUpForm = (validade) => {
   const [values, setValues] = useState({
     fullName: "",
-    Email: "",
+    email: "",
     mobile: "",
     age: "",
     bloodGroup: "",
     address: "",
+    gender: "",
     password: "",
     confirmPassword: "",
     acceptTerms: "",
-    ageState: "",
   });
 
-  const [errors, setErrors] = useState({});
-  //   const [ageState, setAgeState] = useState();
-
-  const handleNumbersChange = (e) => {
-    const regex = /^[0-9\b]+$/;
-    if (e.target.value === "" || regex.test(e.target.value)) {
-      setValues({ ageState: [e.target.value] });
-    }
-  };
-
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
     setValues({
       ...values,
       [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [checked, setChecked] = useState();
+  const handleCheckBox = (event) => {
+    setChecked(event.target.checked);
+    values.acceptTerms = event.target.checked;
   };
 
-  return { handleChange, values, handleNumbersChange, handleSubmit };
+  const resetForm = () => {
+    setValues({});
+  };
+
+  const [errors, setErrors] = useState({});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setErrors(validade(values));
+    console.log(values);
+  };
+
+  return {
+    handleChange,
+    values,
+    errors,
+    validade,
+    handleSubmit,
+    handleCheckBox,
+    resetForm,
+  };
 };
 export default useSignUpForm;
