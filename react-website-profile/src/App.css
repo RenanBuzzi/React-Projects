@@ -8,7 +8,7 @@
 .home,
 .about,
 .contact,
-.jobexperiences,
+.carrer,
 .sign-up {
   display: flex;
   height: 90vh;
@@ -33,7 +33,7 @@
   color: #fff;
   font-size: 100px;
 }
-.jobexperiences {
+.carrer {
   background-image: url("images/img-1.jpg");
   background-position: center;
   background-size: fill;

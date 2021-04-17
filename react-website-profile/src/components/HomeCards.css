@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.bodyCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, #ea1d63 200%);
+  width: 100%;
+}
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  margin-top: 10px;
+}
+.container .card {
+  position: relative;
+  max-width: 400px;
+  height: 260px;
+  background: lightgray;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0);
+  transition: 0s ease-in-out;
+  transition-delay: 0.3s;
+}
+.container .card:hover {
+  height: 350px;
+}
+
+.container .card .imgBx {
+  position: relative;
+  width: 330px;
+  top: -60px;
+  left: 20px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 8);
+}
+.container .card .imgBx img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+.container .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #111;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.container .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -60px;
+  transition-delay: 0.3s;
+}
+.btn {
+  margin-top: 20px;
+}
+.waveHome {
+  padding-top: 0px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, #ea1d63 200%);
+}
+.homePhrase {
+  top: -60px;
+  position: relative;
+}
+.homePhrase:hover {
+  color: #ea1d63;
+}
