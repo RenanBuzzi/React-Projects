@@ -5,13 +5,15 @@ import DataGridCandidates from "./components/DataGridCandidates";
 import { Container } from "@material-ui/core";
 import { ToastProvider } from "react-toast-notifications";
 import Login from "./components/Login";
+import SignUpForm from "./components/SignUpForm";
 
 function App() {
   return (
     <Provider store={store}>
       <ToastProvider autoDismiss={true}>
         <Container maxWidth="lg">
-          <Login />
+          <SignUpForm />
+          {/* <Login /> */}
           {/* <DataGridCandidates /> */}
         </Container>
       </ToastProvider>

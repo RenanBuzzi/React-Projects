@@ -2,7 +2,7 @@ import { AirlineSeatLegroomReducedTwoTone } from "@material-ui/icons";
 import React from "react";
 import useSignUpForm from "./useSignUpForm";
 
-const validadeInfo = (values) => {
+const validateInfo = (values) => {
   let errors = {};
 
   //Full Name Validation
@@ -45,20 +45,20 @@ const validadeInfo = (values) => {
     errors.address = values.address ? "" : "The Address is requeried!";
   }
 
-  if (!values.password.trim()) {
-    errors.password = "Password is requerid";
-  } else if (values.password.length < 6) {
-    errors.password = "Password needs to be 6 chacaters or more";
-  }
+  // if (!values.password.trim()) {
+  //   errors.password = "Password is requerid";
+  // } else if (values.password.length < 6) {
+  //   errors.password = "Password needs to be 6 chacaters or more";
+  // }
 
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Password is required";
-  }
-  if (values.confirmPassword !== values.password) {
-    errors.confirmPassword = "Password do not match!";
-  } else {
-    errors.confirmPassword = "";
-  }
+  // if (!values.confirmPassword) {
+  //   errors.confirmPassword = "Password is required";
+  // }
+  // if (values.confirmPassword !== values.password) {
+  //   errors.confirmPassword = "Password do not match!";
+  // } else {
+  //   errors.confirmPassword = "";
+  // }
 
   // alert(values.acceptTerms);
   // if (!values.acceptTerms.trim()) {
@@ -68,4 +68,4 @@ const validadeInfo = (values) => {
   return errors;
 };
 
-export default validadeInfo;
+export default validateInfo;

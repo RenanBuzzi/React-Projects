@@ -1,7 +1,7 @@
 import { SettingsInputAntennaTwoTone } from "@material-ui/icons";
 import { useState, useEffect } from "react";
 
-const useSignUpForm = (validade) => {
+const useSignUpForm = (validate) => {
   const [values, setValues] = useState({
     fullName: "",
     email: "",
@@ -9,10 +9,10 @@ const useSignUpForm = (validade) => {
     age: "",
     bloodGroup: "",
     address: "",
-    gender: "",
-    password: "",
-    confirmPassword: "",
-    acceptTerms: "",
+    // gender: "",
+    // password: "",
+    // confirmPassword: "",
+    // acceptTerms: "",
   });
 
   const handleChange = (e) => {
@@ -31,23 +31,23 @@ const useSignUpForm = (validade) => {
 
   const resetForm = () => {
     setValues({});
+    window.location.reload();
   };
 
-  const [errors, setErrors] = useState({});
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const [errors, setErrors] = useState({});
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    setErrors(validade(values));
-    console.log(values);
-  };
+  //   setErrors(validate(values));
+  // };
 
   return {
     handleChange,
     values,
-    errors,
-    validade,
-    handleSubmit,
-    handleCheckBox,
+    validate,
+    //handleSubmit,
+    //errors,
+    // handleCheckBox,
     resetForm,
   };
 };
