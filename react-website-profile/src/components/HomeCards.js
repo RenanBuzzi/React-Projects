@@ -10,15 +10,16 @@ const HomeCards = () => {
   const Career = (props) => <Link to="/Career" {...props} />;
   return (
     <>
-      <div className="waveHome">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#fff"
-            fill-opacity="0.7"
-            d="M0,192L30,165.3C60,139,120,85,180,101.3C240,117,300,203,360,208C420,213,480,139,540,138.7C600,139,660,213,720,245.3C780,277,840,267,900,224C960,181,1020,107,1080,85.3C1140,64,1200,96,1260,101.3C1320,107,1380,85,1410,74.7L1440,64L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
-          ></path>
-        </svg>
-        <div className="homePhrase">Welcome to my Page!</div>
+      <div className="waveTop">
+        <div className="homePhrase">
+          Welcome to Renan Buzzi Profile!
+          <div className="homeSecondPhrase">
+            Feel free to check all details, and to contact me anytime.
+          </div>
+        </div>
+        <div>
+          <img className="netWorkHomePage" src="images/t1.png" />
+        </div>
       </div>
       <div className="bodyCards">
         <div className="container">
