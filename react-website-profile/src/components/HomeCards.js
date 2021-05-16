@@ -12,7 +12,7 @@ const HomeCards = () => {
     <>
       <div className="waveTop">
         <div className="homePhrase">
-          Welcome to Renan Buzzi Profile!
+          Welcome to my Profile!
           <div className="homeSecondPhrase">
             Feel free to check all details, and to contact me anytime.
           </div>

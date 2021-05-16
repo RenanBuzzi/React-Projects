@@ -41,7 +41,7 @@
 .container .card .imgBx {
   position: relative;
   width: 330px;
-  top: -100px;
+  top: -60px;
   left: 20px;
   z-index: 1;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 8);
@@ -56,7 +56,7 @@
   padding: 10px 15px;
   text-align: center;
   color: #111;
-  visibility: hidden;
+  visibility: visible;
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
@@ -67,7 +67,7 @@
   transition-delay: 0.3s;
 }
 .btn {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .waveTop {
   padding-top: 0px;
@@ -81,7 +81,7 @@
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, #ea1d63 200%);
 }
 .homePhrase {
-  top: 50px;
+  top: 150px;
   position: relative;
   font-size: 150%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
