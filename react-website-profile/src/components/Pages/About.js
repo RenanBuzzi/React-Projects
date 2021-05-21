@@ -45,7 +45,7 @@ function About() {
           at AGILE methodology. Scrum Master and Scrum fundamentals.
         </div>
         <div>
-          <img className="images" src="images/Skills2.jpg" />
+          <img className="images" src="images/Skills3.jpg" />
         </div>
         <div className="Skill">Skills</div>
         <div className="SubTile">My top skills.</div>
