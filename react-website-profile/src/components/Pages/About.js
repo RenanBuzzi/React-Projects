@@ -3,8 +3,10 @@ import "../../App.css";
 import "./About.css";
 import "../TypeMessage.css";
 import Footer from "../Footer";
+import "../Pages/Carousel.css";
+import CarouselAbout from "../Pages/CarouselAbout";
 
-function About() {
+const About = () => {
   return (
     <>
       {/* <div className="description-container">
@@ -62,6 +64,7 @@ function About() {
         </div>
         <div className="Certificates">Certificates</div>
         <div className="SubTile">My achievements and certificates.</div>
+        <CarouselAbout />
         <div className="Phrase">
           Good things happen when people can move, whether it’s across town or
           towards their dreams. Opportunities appear, open up, become reality.
@@ -89,6 +92,6 @@ function About() {
       <Footer />
     </>
   );
-}
+};
 
 export default About;
