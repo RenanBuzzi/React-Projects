@@ -40,12 +40,12 @@
 
 .next {
   right: 10%;
-  top: 30%;
+  top: 10%;
 }
 
 .prev {
   left: 10%;
-  top: 30%;
+  top: 10%;
 }
 
 @media screen and (max-width: 960px) {
@@ -80,5 +80,14 @@
     padding-top: 30px;
     transform: scale(1.5);
     opacity: 0.9;
+  }
+  .next {
+    right: 10%;
+    top: 10%;
+  }
+
+  .prev {
+    left: 10%;
+    top: 10%;
   }
 }

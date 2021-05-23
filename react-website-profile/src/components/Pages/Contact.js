@@ -1,14 +1,22 @@
-import React from 'react';
-import '../../App.css';
-import Footer from '../Footer';
+import React from "react";
+import "../../App.css";
+import Footer from "../Footer";
 
-function Contact (){
-    return(
-        <>
-        <h1 className='contact'>CONTACT</h1>;
-        <Footer />
-        </>
-    )
-}
+const initialFormValues = {
+  fullName: "",
+  email: "",
+  message: "",
+  formSubmitted: false,
+  success: false,
+};
+
+const Contact = () => {
+  return (
+    <>
+      <form>Contact</form>
+      <Footer />
+    </>
+  );
+};
 
 export default Contact;

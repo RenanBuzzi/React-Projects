@@ -5,6 +5,7 @@ import "../TypeMessage.css";
 import Footer from "../Footer";
 import "../Pages/Carousel.css";
 import CarouselAbout from "../Pages/CarouselAbout";
+import CardMembershipIcon from "@material-ui/icons/CardMembership";
 
 const About = () => {
   return (
@@ -19,7 +20,7 @@ const About = () => {
         <div>
           <img className="images" src="images/life2.jpg" />
         </div>
-        <div className="Life">Life</div>
+        <div className="Life">Life...</div>
         <div className="SubTile">Who is Renan Buzzi?</div>
         <div className="Phrase">
           My name is Renan, I am from Brazil-born in 1988, I have four brothers
@@ -33,7 +34,7 @@ const About = () => {
           and always seeking to update myself with new technologies.
         </div>
         <div>
-          <img className="images" src="images/Education2.jpg" />
+          <img className="images" src="images/education3.1.jpg" />
         </div>
         <div className="Education">Education</div>
         <div className="SubTile">Everything about my background.</div>

@@ -13,7 +13,7 @@ const CarouselAbout = () => {
   const NextArrow = ({ onClick }) => {
     return (
       <div className="arrow next" onClick={onClick}>
-        <FaArrowRight />
+        <FaArrowRight size={50} />
       </div>
     );
   };
@@ -21,7 +21,7 @@ const CarouselAbout = () => {
   const PrevArrow = ({ onClick }) => {
     return (
       <div className="arrow prev" onClick={onClick}>
-        <FaArrowLeft />
+        <FaArrowLeft size={50} />
       </div>
     );
   };

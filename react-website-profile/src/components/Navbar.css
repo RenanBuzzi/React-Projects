@@ -28,6 +28,7 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  text-shadow: 2px 2px #ea1d63;
 }
 .navbar-logo:hover {
   color: #ea1d63;

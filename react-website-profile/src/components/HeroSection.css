@@ -20,9 +20,10 @@ video {
 
 .hero-container > h1 {
   color: #fff;
-  font-size: 1.6rem;
+  font-size: 4.6rem;
   margin-top: -100px;
   text-align: center;
+  text-shadow: 2px 2px #ea1d63;
 }
 
 .hero-container > p {
@@ -69,7 +70,5 @@ video {
 
   .btn {
     width: 100%;
-  }
-  .HomeTile {
   }
 }
