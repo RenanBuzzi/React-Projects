@@ -13,17 +13,17 @@ const formateData = data => ({
 })
 
 export const fetchAll = () => dispatch => {
-// Get API Request
-api.dCandidate().fetchAll()
-.then(
-    response => {
-        // console.log(response)
-        dispatch({
-        type: ACTION_TYPES.FETCHALL,
-        payload: response.data
-    })}
-)
-.catch(err => console.log(err))
+    // Get API Request
+    api.dCandidate().fetchAll()
+    .then(
+        response => {
+            // console.log(response)
+            dispatch({
+            type: ACTION_TYPES.FETCHALL,
+            payload: response.data
+        })}
+    )
+    .catch(err => console.log(err))
 }
 
 export const create = (data, onSuccess) => dispatch => {
@@ -42,7 +42,7 @@ export const create = (data, onSuccess) => dispatch => {
 export const update = (id, data, onSuccess) => dispatch => {
     data = formateData(data)
     api.dCandidate().update(id, data)
-        .then(response => {
+        .then(_response => {
             dispatch({
                 type: ACTION_TYPES.UPDATE,
                 payload: { id, ...data }
@@ -54,7 +54,7 @@ export const update = (id, data, onSuccess) => dispatch => {
 
 export const Delete = (id, onSuccess) => dispatch => {
     api.dCandidate().delete(id)
-        .then(response => {
+        .then(_response => {
             dispatch({
                 type: ACTION_TYPES.DELETE,
                 payload: id

@@ -124,12 +124,13 @@
     opacity: 0.8;
     color: 330748;
     border-radius: 0;
+    text-align: left;
   }
 
   .navbar-logo {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     transform: translate(25%, 50%);
   }
 
@@ -214,9 +215,16 @@
   .hidden {
     display: none;
   }
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 600px) {
     .navbar-logo img {
       display: none;
+    }
+    .navbar-logo {
+      position: relative;
+      top: -20px;
+      left: -90px;
+      transform: translate(25%, 50%);
+      font-size: 2rem;
     }
   }
 }

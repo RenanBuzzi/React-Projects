@@ -1,18 +1,18 @@
-import React from 'react';
-import '../../App.css'
+import React from "react";
+import "../../App.css";
 // import Cards from '../Cards';
-import HeroSection from '../HeroSection';
-import Footer from '../Footer';
-import HomeBody from '../HomeBody';
+import HeroSection from "../HeroSection";
+import Footer from "../Footer";
+import HomeCards from "../HomeCards";
 
-function Home (){
-    return(
-        <>
-        <HeroSection/>
-        <HomeBody/>
-        <Footer />
-        </>
-    )
+function Home() {
+  return (
+    <>
+      <HeroSection />
+      <HomeCards />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
