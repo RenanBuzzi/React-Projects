@@ -1,0 +1,69 @@
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+}
+.h1 {
+  size: 100px;
+  margin-left: 250px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+.imgCareer {
+  size: 150px;
+  height: 150px;
+  margin-left: 250px;
+}
+.title {
+  size: 50px;
+  margin-left: 450px;
+  margin-top: 150px;
+  margin-bottom: 25px;
+}
+.Logos {
+  width: 15%;
+}
+.imgLogo {
+  width: 15%;
+  /* background: silver; */
+  float: left;
+}
+
+.companyDetails {
+  margin-left: 15%;
+  /* height: 200px; */
+  /* background: silver; */
+}
+.role {
+  margin-left: 10%;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.companyInformation {
+  width: 700px;
+  margin-left: 85px;
+}
+
+.technicalSkills {
+  width: 700px;
+  margin-left: 160px;
+  margin-top: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.ListActivities {
+  margin-left: 160px;
+  margin-top: 5px;
+  width: 900px;
+}
+.lastItem {
+  margin-bottom: 50px;
+}
+.mainTechnologies {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 170px;
+  font-weight: bold;
+  color: slategrey;
+}

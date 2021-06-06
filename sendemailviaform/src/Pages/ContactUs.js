@@ -1,76 +1,170 @@
 import emailjs from "emailjs-com";
 import React from "react";
+import useForm from "./useForm";
+import "@fontsource/roboto";
+import { Grid, TextField, Button } from "@material-ui/core";
+// import { useToasts } from "react-toast-notifications";
+import "../Pages/ContactUs.css";
 
 export default function ContactUs() {
-  function sendEmail(e) {
-    e.preventDefault();
+  const sendEmail = (e) => {
+    alert("SendEmail");
+    // e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_3ohg94w",
-        "template_o2r7zv3",
-        e.target,
-        "user_DaMICwMkKFZ4BsHCPeTU0"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  }
+    // if (validate()) {
+    //   sendEmail();
+    //   emailjs
+    //     .sendForm(
+    //       "service_3ohg94w",
+    //       "template_o2r7zv3",
+    //       e.target,
+    //       "user_DaMICwMkKFZ4BsHCPeTU0"
+    //     )
+    //     .then(
+    //       (result) => {
+    //         console.log(result.text);
+    //       },
+    //       (error) => {
+    //         console.log(error.text);
+    //       }
+    //    );
+    //}
+  };
+
+  const initialFieldValues = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
+  // const { addToast } = useToasts();
+  const emailValidation = /^$|.+@.+..+|\s+/;
+
+  const validate = (fieldValues = values) => {
+    let temp = { ...errors };
+    if ("name" in fieldValues)
+      temp.name = fieldValues.name ? "" : "Name is required.";
+    if ("message" in fieldValues)
+      temp.message = fieldValues.message ? "" : "Message is required.";
+    if ("subject" in fieldValues)
+      temp.subject = fieldValues.subject ? "" : "Suject is required.";
+
+    if ("email" in fieldValues)
+      temp.email = emailValidation.test(fieldValues.email)
+        ? ""
+        : "Email is not valid.";
+
+    setErrors({
+      ...temp,
+    });
+
+    if (fieldValues == values) return Object.values(temp).every((x) => x == "");
+  };
+
+  const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
+    useForm(initialFieldValues, validate);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      sendEmail();
+
+      // addToast("Submitted successfully", { appearance: "success" });
+      // const onSuccess = () => {
+      // };
+    }
+  };
 
   return (
-    <div>
-      <div className="container">
-        <form onSubmit={sendEmail}>
-          <div className="row pt-5 mx-auto">
-            <div className="col-8 form-group mx-auto">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Name"
-                name="name"
-              />
+    <div className="contactUsForm">
+      <form
+        autoComplete="off"
+        noValidate
+        // className={classes.root}
+        onSubmit={handleSubmit}
+      >
+        <Grid container>
+          <Grid item xs={8}>
+            <div className="textfield">
+              <Grid item xs={8}>
+                <TextField
+                  fullWidth
+                  name="name"
+                  variant="standard"
+                  label="Name"
+                  size="large"
+                  value={values.name}
+                  onChange={handleInputChange}
+                  {...(errors.name && { error: true, helperText: errors.name })}
+                />
+              </Grid>
             </div>
-            <div className="col-8 form-group pt-2 mx-auto">
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Email Address"
-                name="email"
-              />
+
+            <div className="textfield">
+              <Grid item xs={8}>
+                <TextField
+                  fullWidth
+                  name="email"
+                  variant="standard"
+                  label="Email"
+                  value={values.email}
+                  onChange={handleInputChange}
+                  {...(errors.email && {
+                    error: true,
+                    helperText: errors.email,
+                  })}
+                />
+              </Grid>
             </div>
-            <div className="col-8 form-group pt-2 mx-auto">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Subject"
-                name="subject"
-              />
+
+            <div className="textfield">
+              <Grid item xs={8}>
+                <TextField
+                  fullWidth
+                  className="textFields"
+                  name="subject"
+                  variant="standard"
+                  label="Subject"
+                  value={values.subject}
+                  onChange={handleInputChange}
+                  {...(errors.subject && {
+                    error: true,
+                    helperText: errors.subject,
+                  })}
+                />
+              </Grid>
             </div>
-            <div className="col-8 form-group pt-2 mx-auto">
-              <textarea
-                className="form-control"
-                id=""
-                cols="30"
-                rows="8"
-                placeholder="Your message"
-                name="message"
-              ></textarea>
+
+            <div className="textfield">
+              <Grid item xs={8}>
+                <TextField
+                  fullWidth
+                  id="standard-multiline-flexible"
+                  aria-label="minimum height"
+                  rows={5}
+                  rowsMax={5}
+                  multiline
+                  placeholder="Minimum 5 rows"
+                  name="message"
+                  variant="outlined"
+                  label="Message"
+                  value={values.message}
+                  onChange={handleInputChange}
+                  {...(errors.message && {
+                    error: true,
+                    helperText: errors.message,
+                  })}
+                />
+              </Grid>
             </div>
-            <div className="col-8 pt-3 mx-auto">
-              <input
-                type="submit"
-                className="btn btn-info"
-                value="Send Message"
-              ></input>
-            </div>
-          </div>
-        </form>
-      </div>
+
+            <Button variant="contained" color="primary" type="submit">
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
     </div>
   );
 }

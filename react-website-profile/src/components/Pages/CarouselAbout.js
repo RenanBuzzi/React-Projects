@@ -6,6 +6,7 @@ import MBABI from "../ImagesCarousel/MBABI.jpg";
 import SFC from "../ImagesCarousel/SFC.jpg";
 import SMPC from "../ImagesCarousel/SMPC.jpg";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import "../Pages/SliderSliding.css";
 
 const images = [bsi, MBABI, SFC, SMPC];
 
@@ -41,15 +42,32 @@ const CarouselAbout = () => {
   };
 
   return (
-    <div className="App">
-      <Slider {...settings}>
-        {images.map((img, idx) => (
-          <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
-            <img src={img} alt={img} />
+    <>
+      <div className="App">
+        <Slider {...settings}>
+          {images.map((img, idx) => (
+            <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
+              <img src={img} alt={img} textSub />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div>
+        <Slider>
+          <div class="content">
+            <div class="slider-wrapper">
+              Certifications
+              <div class="slider">
+                <div class="slider-text1">Scrum Master Professional</div>
+                <div class="slider-text2">Scrum Foundation</div>
+                <div class="slider-text3">Information System</div>
+                <div class="slider-text4">Busniess Intelligence</div>
+              </div>
+            </div>
           </div>
-        ))}
-      </Slider>
-    </div>
+        </Slider>
+      </div>
+    </>
   );
 };
 
