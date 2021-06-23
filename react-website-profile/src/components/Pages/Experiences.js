@@ -6,7 +6,6 @@ const Experiences = () => {
   return (
     <>
       <div className="mainContainer">
-        <h1 className="h1">Experiences</h1>
         <div class="imgLogo">
           <img className="imgCareer" src="images/PRS.png" />
         </div>
@@ -66,9 +65,7 @@ const Experiences = () => {
             </div>
             <div className="companyInformation">London, United Kingdom</div>
           </div>
-          <div className="technicalSkills">
-            Technical skills at PRS for Music
-          </div>
+          <div className="technicalSkills">Technical skills at RedCloud.</div>
           <div className="ListActivities">• Web API Rest</div>
           <div className="ListActivities">
             • Authorisation and Authentication.
@@ -183,7 +180,7 @@ const Experiences = () => {
             <div className="companyInformation">São Paulo Area, Brazil</div>
           </div>
           <div className="technicalSkills">
-            Technical skills at Roche Pharmaceuticals
+            Technical skills at Deal Technology.
           </div>
           <div className="ListActivities">• Mapping and transforming data.</div>
           <div className="ListActivities">
@@ -257,7 +254,7 @@ const Experiences = () => {
             <div className="companyInformation">São Paulo Area, Brazil</div>
           </div>
           <div className="technicalSkills">
-            Technical skills at Roche Pharmaceuticals
+            Technical skills at Brink's ePago.
           </div>
           <div className="ListActivities">
             • Responsible for helping the HR and Finance area to create some
@@ -312,9 +309,7 @@ const Experiences = () => {
             <div className="companyInformation">Oct 2010 – Sep 2012</div>
             <div className="companyInformation">São Paulo Area, Brazil</div>
           </div>
-          <div className="technicalSkills">
-            Technical skills at Roche Pharmaceuticals
-          </div>
+          <div className="technicalSkills">Technical skills at Telefonica.</div>
           <div className="ListActivities">• Mapping and transforming data.</div>
           <div className="ListActivities">
             • Design and development of Solution.
@@ -366,7 +361,7 @@ const Experiences = () => {
             <div className="companyInformation">São Paulo Area, Brazil</div>
           </div>
           <div className="technicalSkills">
-            Technical skills at Roche Pharmaceuticals
+            Technical skills at BSI Technology.
           </div>
           <div className="ListActivities">
             • Responsible for creating a website with indicators based on the

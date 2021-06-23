@@ -5,7 +5,6 @@ import "../TypeMessage.css";
 import Footer from "../Footer";
 import "../Pages/Carousel.css";
 import CarouselAbout from "../Pages/CarouselAbout";
-import CardMembershipIcon from "@material-ui/icons/CardMembership";
 
 const About = () => {
   return (
@@ -60,7 +59,7 @@ const About = () => {
           to all kinds of places in all kinds of ways with the help of our
           technology.
         </div>
-        <div>
+        {/* <div>
           <img className="images" src="images/certificate.jpg" />
         </div>
         <div className="Certificates">Certificates</div>
@@ -73,7 +72,7 @@ const About = () => {
           billions of moments of human connection as people around the world go
           to all kinds of places in all kinds of ways with the help of our
           technology.
-        </div>
+        </div> */}
 
         <div>
           <img className="images" src="images/hobby.jpg" />

@@ -47,7 +47,7 @@ const CarouselAbout = () => {
         <Slider {...settings}>
           {images.map((img, idx) => (
             <div className={idx === imageIndex ? "slide activeSlide" : "slide"}>
-              <img src={img} alt={img} textSub />
+              <img key="{img}" src={img} alt={img} textSub />
             </div>
           ))}
         </Slider>

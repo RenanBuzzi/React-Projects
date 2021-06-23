@@ -1,55 +1,87 @@
 import React from "react";
 import "../../App.css";
+import PropTypes from "prop-types";
 import Footer from "../Footer";
-import Experiences from "../Pages/Experiences";
-import Education from "../Pages/Education";
+import Experiences from "./Experiences";
+import Education from "./Education";
 import "../Pages/Career.css";
 import "../Pages/Experiences.css";
 import { Paper, Tabs, Tab } from "@material-ui/core";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import { StickyContainer, Sticky } from "react-sticky";
+
+const TabPanel = (props) => {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`nav-tabpanel-${index}`}
+      aria-labelledby={`nav-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={2}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+};
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+const a11yProps = (index) => {
+  return {
+    id: `nav-tab-${index}`,
+    "aria-controls": `nav-tabpanel-${index}`,
+  };
+};
+
+const LinkTab = (props) => {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+};
 
 const Career = () => {
-  const routes = ["/Experiences", "/Education"];
-  const activityTab = "/Experiences";
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <>
-      <BrowserRouter>
-        <Route
-          path="/"
-          render={(history) => (
-            <Paper square>
-              <Tabs
-                initialSelectedIndex={activityTab}
-                value={
-                  history.location.pathname !== "/"
-                    ? history.location.pathname
-                    : false
-                }
-                aria-label="full width tabs example"
-                variant="fullWidth"
-              >
-                <Tab
-                  label="Experiences"
-                  value={routes[0]}
-                  component={Link}
-                  to={routes[0]}
-                />
-                <Tab
-                  label="Education"
-                  value={routes[1]}
-                  component={Link}
-                  to={routes[1]}
-                />
-              </Tabs>
-            </Paper>
-          )}
-        ></Route>
-        <Switch>
-          <Route path="/Experiences" component={Experiences} />
-          <Route path="/Education" component={Education} />
-        </Switch>
-      </BrowserRouter>
+      <Paper square className="sticky">
+        <Tabs
+          variant="fullWidth"
+          value={value}
+          onChange={handleChange}
+          aria-label="nav tabs example"
+        >
+          <LinkTab label="Experiences" href="/Experiences" {...a11yProps(0)} />
+          <LinkTab label="Education" href="/Education" {...a11yProps(1)} />
+        </Tabs>
+      </Paper>
+      <TabPanel value={value} index={0}>
+        <Experiences />
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Education />
+      </TabPanel>
       <Footer />
     </>
   );

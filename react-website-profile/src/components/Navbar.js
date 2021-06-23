@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { render } from "@testing-library/react";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -33,7 +32,6 @@ function Navbar() {
             <i class="fa fa-code" aria-hidden="true"></i>
             &nbsp;Renan Buzzi&nbsp;
             <i class="fa fa-code" aria-hidden="true"></i>
-            {/* <img className="navbar-logo" src={Logo}/> */}
           </Link>
 
           <div className="menu-icon" onClick={handleClick}>
@@ -52,15 +50,6 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/contact"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Contact
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
                 to="/career"
                 className="nav-links"
                 onClick={closeMobileMenu}
@@ -68,7 +57,16 @@ function Navbar() {
                 Career
               </Link>
             </li>
-            <li>
+            <li className="nav-item">
+              <Link
+                to="/contact"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Contact
+              </Link>
+            </li>
+            {/* <li>
               <Link
                 to="/sign-up"
                 className="nav-links-mobile"
@@ -76,9 +74,9 @@ function Navbar() {
               >
                 Sign Up
               </Link>
-            </li>
+            </li> */}
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+          {/* {button && <Button buttonStyle="btn--outline">SIGN UP</Button>} */}
         </div>
       </nav>
     </>
