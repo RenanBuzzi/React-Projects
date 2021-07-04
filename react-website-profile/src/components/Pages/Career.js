@@ -9,7 +9,6 @@ import "../Pages/Experiences.css";
 import { Paper, Tabs, Tab } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { StickyContainer, Sticky } from "react-sticky";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;

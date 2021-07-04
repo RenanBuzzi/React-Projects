@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", sans-serif;
+}
+
+.home,
+.about,
+.contact .about {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 90px;
+  opacity: 0.8;
+}
+
+.contact {
+  /* background-image: url("images/img-1.jpg"); */
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}

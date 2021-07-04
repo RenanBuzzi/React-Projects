@@ -4,15 +4,20 @@ import "../../App.css";
 import HeroSection from "../HeroSection";
 import Footer from "../Footer";
 import HomeCards from "../HomeCards";
+import Slider from "./SlideImages/Slider";
+import { Fragment } from "react";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <HeroSection />
-      <HomeCards />
+      <Fragment>
+        <Slider />
+      </Fragment>
+      {/* <HomeCards /> */}
       <Footer />
     </>
   );
-}
+};
 
 export default Home;

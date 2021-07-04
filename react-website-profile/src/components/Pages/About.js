@@ -4,7 +4,6 @@ import "./About.css";
 import "../TypeMessage.css";
 import Footer from "../Footer";
 import "../Pages/Carousel.css";
-import CarouselAbout from "../Pages/CarouselAbout";
 
 const About = () => {
   return (
