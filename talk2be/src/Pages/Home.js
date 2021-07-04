@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <>
       <div className="main">
-        <img className="mainHomePart1" src={talk2beimg} alt="Logo" />
+        <div className="mainImage">
+          <img className="mainHomePart1" src={talk2beimg} alt="Logo" />
+        </div>
         <div className="mainTextWelcome">Welcome to the hive</div>
         <div className="mainText">
           talk2 Bee is a practical way to improve and maintain fluency in

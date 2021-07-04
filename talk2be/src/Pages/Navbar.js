@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "../Pages/Navbar.css";
+import logoTalk2Be from "../images/bee.jpg";
 
 function Navbar() {
+  let history = useHistory();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+
+  const redirectHome = () => {
+    history.push("/home");
+  };
 
   const showButton = () => {
     if (window.innerWidth < 960 || window.innerWidth > 960) {
@@ -27,12 +33,17 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div>
-          {/* <img className="logoTalk2Be" src={logoTalk2Be} alt="Logo" /> */}
-
+          <img
+            className="navbar-logo"
+            src={logoTalk2Be}
+            alt="Logo"
+            onClick={redirectHome}
+          />
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fa fa-times" : "fa fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <div className="logoMobileBee"></div>
             <li className="nav-item">
               <Link to="/Home" className="nav-links" onClick={closeMobileMenu}>
                 Home
