@@ -3,6 +3,7 @@ import "../App.css";
 import Footer from "./Footer";
 import talk2beimg from "../images/Originav2.jpg";
 import "../Pages/Home.css";
+import Slider from "../SlideImages/Slider";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         </div>
         <div className="mainText2">Practice makes perfect</div>
       </div>
+      <Slider />
 
       <Footer />
     </>

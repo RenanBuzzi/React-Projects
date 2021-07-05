@@ -223,7 +223,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 728px) {
+@media screen and (max-width: 1024px) {
   .NavbarItems {
     position: relative;
   }
@@ -352,17 +352,17 @@
   .hidden {
     display: none;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .navbar-logo img {
-    display: none;
-  }
-  .navbar-logo {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    margin-top: -10px;
+  @media screen and (max-width: 600px) {
+    .navbar-logo img {
+      display: none;
+    }
+    .navbar-logo {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      margin-top: -10px;
+    }
   }
 }

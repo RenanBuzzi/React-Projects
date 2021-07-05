@@ -1,380 +1,78 @@
-.AboutCenterPage {
-  background-color: white;
+.mainHeader {
+  width: 50%;
+  height: 100px;
+  background-color: #1e0253;
 }
-.titleAbout {
-  padding-left: 15%;
-  padding-top: 3%;
-  color: #ea1d63;
-}
-.images {
-  /* margin-left: 200px; */
+
+.secondSquare {
   width: 100%;
-  opacity: 0.8;
+  height: 100%;
+  margin-left: 100%;
+  background-color: #dd9f0d;
+  padding-left: 200px;
 }
-.Life {
-  width: 200px;
-  margin-left: 15%;
-  height: 80px;
-  color: white;
-  font-size: 8.6rem;
-  position: absolute;
-  display: flex;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 2px 2px #ea1d63;
-}
-.Education {
-  width: 200px;
-  margin-left: 15%;
-  height: 80px;
-  color: #ea1d63;
-  font-size: 8.6rem;
-  opacity: 0.8;
-  position: absolute;
-  display: flex;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 2px 2px #fff;
-}
-.Skill {
-  width: 200px;
-  margin-left: 15%;
-  height: 80px;
-  color: #ea1d63;
-  font-size: 8.6rem;
-  opacity: 0.9;
-  position: absolute;
-  display: flex;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 2px 2px #fff;
-}
-.Certificates {
-  width: 200px;
-  margin-left: 15%;
-  height: 80px;
-  color: #ea1d63;
-  font-size: 8.6rem;
-  opacity: 0.9;
-  position: absolute;
-  display: flex;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 2px 2px #fff;
-}
-.Hobbies {
-  width: 200px;
-  margin-left: 15%;
-  height: 80px;
-  color: #ea1d63;
-  font-size: 8.6rem;
-  opacity: 0.9;
-  position: absolute;
-  display: flex;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 2px 2px #fff;
-}
-
-.SubTile {
-  margin-left: 15%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 2.6rem;
-  margin-top: 20px;
-  font-weight: bold;
-  text-shadow: 2px 2px silver;
-}
-.MainPhrase {
-  padding-top: 50px;
-  padding-left: 15%;
-  padding-top: 200px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 40px;
-  padding-bottom: 10px;
-  margin-right: 200px;
-}
-.Phrase {
-  padding-top: 40px;
-  padding-left: 15%;
-  padding-right: 11%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.2rem;
-  margin-right: 50px;
-  padding-bottom: 50px;
-}
-.PhotoPerfil {
+.title {
+  background-color: #fff;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: bolder;
   margin-top: 100px;
-  margin-left: 15%;
-  width: 200px;
-  border-radius: 0.3px;
-  border-radius: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 8);
 }
-/*Mediun Size netWorkImageAbout*/
-@media screen and (max-width: 1600px) {
-  .MainPhrase {
-    padding-left: 15%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 30px;
-    margin-right: 130px;
-    height: 100%;
-    margin-top: 100px;
-  }
-  .Phrase {
-    padding-left: 15%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 15px;
-    margin-right: 130px;
-    height: 100%;
-    margin-top: 50px;
-    padding-bottom: 20px;
-  }
-  .AboutCenterPage {
-    width: 100%;
-    height: 300px;
-    background-color: white;
-    height: 100%;
-  }
-  .images {
-    /* margin-left: 100px; */
-    width: 100%;
-    opacity: 0.8;
-    height: 60%;
-  }
-  .SubTile {
-    margin-left: 15%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 2rem;
-    margin-top: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px silver;
-  }
-  .Phrase {
-    padding-top: 0px;
-    padding-left: 15%;
-    padding-right: 11%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.2rem;
-    margin-right: 5%;
-    padding-bottom: 50px;
-  }
-  .Life {
-    width: 100px;
-    margin-left: 15%;
-    height: 80px;
-    color: white;
-    font-size: 4.6rem;
-    position: absolute;
-    display: flex;
-    margin-top: -120px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #ea1d63;
-  }
-  .Education {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: #ea1d63;
-    font-size: 4.6rem;
-    opacity: 0.8;
-    position: absolute;
-    display: flex;
-    margin-top: -120px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Skill {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: #ea1d63;
-    font-size: 4.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -120px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Certificates {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: #ea1d63;
-    font-size: 4.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -120px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Hobbies {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: #ea1d63;
-    font-size: 4.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -120px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
+.subTitle {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  margin-top: 150px;
+}
+.text {
+  text-align: center;
+  font-size: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 1.9;
+  margin-bottom: 100px;
+}
+.meetTeam {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
 }
 
-/*Mobile*/
-@media screen and (max-width: 600px) {
-  .images {
-    width: 80%;
-    opacity: 0.8;
-    height: 60%;
-    margin-left: 10%;
-  }
-  .MainPhrase {
-    padding-left: 10%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 30px;
-    margin-right: 130px;
-    height: 100%;
-    margin-top: 100px;
-  }
-  .Phrase {
-    padding-left: 15%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 15px;
-    margin-right: 130px;
-    height: 100%;
-    margin-top: 50px;
-    padding-bottom: 20px;
-  }
-  .AboutCenterPage {
-    width: 100%;
-    height: 300px;
-    background-color: white;
-    height: 100%;
-  }
-  .SubTile {
-    margin-left: 15%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5rem;
-    margin-top: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px silver;
-  }
-  .Phrase {
-    padding-top: 0px;
-    padding-left: 15%;
-    padding-right: 11%;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.2rem;
-    margin-right: 5%;
-    padding-bottom: 50px;
-  }
-  .Life {
-    width: 100px;
-    margin-left: 15%;
-    height: 80px;
-    color: white;
-    font-size: 2.6rem;
-    position: absolute;
-    display: flex;
-    margin-top: -70px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #ea1d63;
-  }
-  .Education {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: #ea1d63;
-    font-size: 2.6rem;
-    opacity: 0.8;
-    position: absolute;
-    display: flex;
-    margin-top: -70px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Skill {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: orange;
-    font-size: 2.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -70px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Certificates {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: royalblue;
-    font-size: 2.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -70px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
-  .Hobbies {
-    width: 200px;
-    margin-left: 15%;
-    height: 80px;
-    color: green;
-    font-size: 2.6rem;
-    opacity: 0.9;
-    position: absolute;
-    display: flex;
-    margin-top: -70px;
-    margin-bottom: 100px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-shadow: 2px 2px #fff;
-  }
+.user {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-left: 140px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  text-align: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.one {
+  background-image: url("../images/employee/Elaine.jpg");
+  padding-top: 200px;
+  align-items: center;
+}
+
+.two {
+  background-image: url("../images/employee/Luckasz.jpg");
+  padding-top: 200px;
+}
+
+.three {
+  background-image: url("../images/employee/Thiago.jpg");
+  padding-top: 200px;
+}
+.four {
+  background-image: url("../images/employee/Renan.jpg");
+  padding-top: 200px;
 }
