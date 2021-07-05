@@ -32,7 +32,7 @@
 @media screen and (min-width: 960px) {
   .mainHomePart1 {
     width: 50%;
-    height: 700px;
+    height: 500px;
     background: #1e0253;
   }
   .main {
@@ -43,7 +43,7 @@
   .mainTextWelcome {
     margin-left: 50%;
     text-align: center;
-    margin-top: -550px;
+    margin-top: -400px;
     font-size: 40px;
   }
   .mainText {

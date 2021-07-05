@@ -1,11 +1,7 @@
 import React from "react";
 import "../App.css";
 import Footer from "./Footer";
-import aboutCSS from "../Pages/About.css";
-import elaine from "../images/employee/Elaine.jpg";
-import luckasz from "../images/employee/Luckasz.jpg";
-import thiago from "../images/employee/Thiago.jpg";
-import renan from "../images/employee/Renan.jpg";
+import about from "../Pages/About.css";
 
 const About = () => {
   return (

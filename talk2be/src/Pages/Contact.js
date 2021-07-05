@@ -7,6 +7,7 @@ import "../Pages/Contact.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Grid, TextField, Button } from "@material-ui/core";
+import talk2beimg from "../images/Originav2.jpg";
 
 toast.configure();
 export default function Contact() {
@@ -58,7 +59,8 @@ export default function Contact() {
       ...temp,
     });
 
-    if (fieldValues == values) return Object.values(temp).every((x) => x == "");
+    if (fieldValues === values)
+      return Object.values(temp).every((x) => x === "");
   };
 
   const { values, setValues, errors, setErrors, handleInputChange, resetForm } =
@@ -79,108 +81,104 @@ export default function Contact() {
   return (
     <>
       <div class="ContainerLeft">
-        <div className="logoContactMe">
-          <img className="imagesContact" src="images/contactme2.jpg" />
-        </div>
-        <div className="LogoRGB">
-          <img className="imagesLogoRGB" src="images/logo_transparent.png" />
-        </div>
-      </div>
-      <div className="ContainerRight">
-        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
-          <Grid container>
-            <Grid item xs={12}>
-              <div className="textfield">
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    name="name"
-                    variant="standard"
-                    label="Name"
-                    size="large"
-                    value={values.name}
-                    onChange={handleInputChange}
-                    {...(errors.name && {
-                      error: true,
-                      helperText: errors.name,
-                    })}
-                  />
-                </Grid>
-              </div>
+        <img className="contactImg" src={talk2beimg} alt="Logo" />
 
-              <div className="textfield">
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    name="email"
-                    variant="standard"
-                    label="Email"
-                    value={values.email}
-                    onChange={handleInputChange}
-                    {...(errors.email && {
-                      error: true,
-                      helperText: errors.email,
-                    })}
-                  />
-                </Grid>
-              </div>
+        <div className="ContainerRight">
+          <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+            <Grid container>
+              <Grid item xs={12}>
+                <div className="textfield">
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      name="name"
+                      variant="standard"
+                      label="Name"
+                      size="large"
+                      value={values.name}
+                      onChange={handleInputChange}
+                      {...(errors.name && {
+                        error: true,
+                        helperText: errors.name,
+                      })}
+                    />
+                  </Grid>
+                </div>
 
-              <div className="textfield">
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    className="textFields"
-                    name="subject"
-                    variant="standard"
-                    label="Subject"
-                    value={values.subject}
-                    onChange={handleInputChange}
-                    {...(errors.subject && {
-                      error: true,
-                      helperText: errors.subject,
-                    })}
-                  />
-                </Grid>
-              </div>
+                <div className="textfield">
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      name="email"
+                      variant="standard"
+                      label="Email"
+                      value={values.email}
+                      onChange={handleInputChange}
+                      {...(errors.email && {
+                        error: true,
+                        helperText: errors.email,
+                      })}
+                    />
+                  </Grid>
+                </div>
 
-              <div className="textfield">
-                <Grid item xs={12}>
-                  <TextField
-                    fullWidth
-                    id="standard-multiline-flexible"
-                    aria-label="minimum height"
-                    rows={5}
-                    rowsMax={5}
-                    multiline
-                    placeholder="Minimum 5 rows"
-                    name="message"
-                    variant="outlined"
-                    label="Message"
-                    value={values.message}
-                    onChange={handleInputChange}
-                    {...(errors.message && {
-                      error: true,
-                      helperText: errors.message,
-                    })}
-                  />
-                </Grid>
-              </div>
+                <div className="textfield">
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      className="textFields"
+                      name="subject"
+                      variant="standard"
+                      label="Subject"
+                      value={values.subject}
+                      onChange={handleInputChange}
+                      {...(errors.subject && {
+                        error: true,
+                        helperText: errors.subject,
+                      })}
+                    />
+                  </Grid>
+                </div>
 
-              <div className="buttonSubmit">
-                <Grid item xs={12}>
-                  <Button
-                    className="textfield"
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                  >
-                    Submit
-                  </Button>
-                </Grid>
-              </div>
+                <div className="textfield">
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      id="standard-multiline-flexible"
+                      aria-label="minimum height"
+                      rows={5}
+                      rowsMax={5}
+                      multiline
+                      placeholder="Minimum 5 rows"
+                      name="message"
+                      variant="outlined"
+                      label="Message"
+                      value={values.message}
+                      onChange={handleInputChange}
+                      {...(errors.message && {
+                        error: true,
+                        helperText: errors.message,
+                      })}
+                    />
+                  </Grid>
+                </div>
+
+                <div className="buttonSubmit">
+                  <Grid item xs={12}>
+                    <Button
+                      className="textfield"
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                    >
+                      Submit
+                    </Button>
+                  </Grid>
+                </div>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
+          </form>
+        </div>
       </div>
       <Footer />
     </>
