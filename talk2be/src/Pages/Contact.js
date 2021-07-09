@@ -7,7 +7,7 @@ import "../Pages/Contact.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Grid, TextField, Button } from "@material-ui/core";
-import talk2beimg from "../images/Originav2.jpg";
+import talk2beimg from "../images/Originav2.png";
 
 toast.configure();
 export default function Contact() {
@@ -80,10 +80,11 @@ export default function Contact() {
 
   return (
     <>
-      <div class="ContainerLeft">
-        <img className="contactImg" src={talk2beimg} alt="Logo" />
-
-        <div className="ContainerRight">
+      <div className="mainContact">
+        <div className="mainContactImage">
+          <img className="mainContactPart1" src={talk2beimg} alt="Logo" />
+        </div>
+        <div className="formContact">
           <form autoComplete="off" noValidate onSubmit={handleSubmit}>
             <Grid container>
               <Grid item xs={12}>

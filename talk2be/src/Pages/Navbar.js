@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../Pages/Navbar.css";
-import logoTalk2Be from "../images/bee.jpg";
+import logoTalk2Be from "../images/bee.ico";
 
 function Navbar() {
   let history = useHistory();

@@ -1,100 +1,104 @@
-@media screen and (min-width: 1200px) {
-  .mainHomePart1 {
-    width: 50%;
-    height: 700px;
-  }
+/*Full Screen*/
+@media only screen and (max-width: 1980px) {
   .main {
     width: 100%;
-    height: 600px;
+    height: 900px !important;
     background: #dd9f0d;
   }
-  .mainTextWelcome {
+  .logoTalkToBee {
+    width: 50%;
+    height: 900px !important;
+  }
+
+  .TextWelcome {
     text-align: center;
     margin-left: 50%;
-    margin-top: -550px;
+    margin-top: -500px;
     font-size: 40px;
   }
-  .mainText {
+  .middleText {
     text-align: center;
-    margin-top: 20px;
-    margin-left: 55%;
-    font-size: 30px;
+    margin-top: 30px;
+    padding-left: 52%;
+    margin-right: 20px;
+    font-size: 20px;
   }
-  .mainText2 {
+  .finalText {
     text-align: center;
-    margin-top: 60px;
-    margin-left: 1050px;
-    margin-right: 100px;
+    margin-top: 30px;
+    padding-left: 52%;
+    margin-right: 20px;
     font-size: 30px;
   }
 }
 
-@media screen and (min-width: 960px) {
-  .mainHomePart1 {
-    width: 50%;
-    height: 500px;
-    background: #1e0253;
-  }
+/*Meidle Screen*/
+@media only screen and (max-width: 1024px) {
   .main {
     width: 100%;
-    height: 500px;
+    height: 400px !important;
     background: #dd9f0d;
   }
-  .mainTextWelcome {
+  .logoTalkToBee {
+    width: 50%;
+    height: 400px !important;
+  }
+  .TextWelcome {
     margin-left: 50%;
     text-align: center;
-    margin-top: -400px;
-    font-size: 40px;
-  }
-  .mainText {
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 60%;
-    margin-right: 100px;
+    margin-top: -360px;
     font-size: 20px;
   }
-  .mainText2 {
+  .middleText {
     text-align: center;
-    margin-top: 60px;
-    margin-left: 60%;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 15px;
+  }
+  .finalText {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 10%;
     margin-right: 100px;
     font-size: 20px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .mainHomePart1 {
-    width: 1000%;
-    height: 100%;
-  }
   .main {
     width: 100%;
-    height: 100%;
+    height: 1000px !important;
     background: #dd9f0d;
   }
-  .mainImage {
-    height: 100%;
+  .logoTalkToBee {
     width: 100%;
-    content: url("../images/Originav2.jpg");
+    height: 600px;
   }
-  .mainTextWelcome {
+  .TextWelcome {
+    margin-left: 10px;
     text-align: center;
+    margin-top: 80px;
     font-size: 30px;
+    font-weight: bold;
+  }
+  .middleText {
+    text-align: center;
+    margin-top: 30px;
+    padding-left: 25px;
+    margin-right: 50px;
+    font-size: 20px;
+  }
+  .finalText {
+    text-align: center;
     margin-top: 40px;
+    padding-left: 5px;
+    margin-right: 20px;
+    font-size: 25px;
+    font-weight: bold;
   }
-  .mainText {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 20px;
-  }
-  .mainText2 {
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding-bottom: 40px;
-    font-size: 20px;
+  .line {
+    width: 100%;
+    height: 10px;
   }
 }

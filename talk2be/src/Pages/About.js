@@ -35,22 +35,22 @@ const About = () => {
             <div class="user one">
               <br></br>
               <h2>Elaine Buzzi</h2>
-              <br></br>Cargo
+              <br></br>Co-Founder
             </div>
             <div class="user two">
               <br></br>
-              <h2>Luckasz</h2>
-              <br></br>Cargo
+              <h3>Lukasz Wierzchowski</h3>
+              <br></br>Bee Linguistic
             </div>
             <div class="user three">
               <br></br>
               <h2>Thiago Kaizer</h2>
-              <br></br>Cargo
+              <br></br>Bee Business Development
             </div>
             <div class="user four">
               <br></br>
               <h2>Renan Buzzi</h2>
-              <br></br>Cargo
+              <br></br>Bee Software engineer
             </div>
           </div>
         </div>

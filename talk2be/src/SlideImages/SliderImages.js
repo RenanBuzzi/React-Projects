@@ -6,23 +6,23 @@ import slide4 from "../images/Slide/Slide4.jpg";
 
 export default [
   {
-    title: "talk2bee...",
+    title: "",
     description:
       "The practical way to improve and maintain fluency in English.",
     urls: slide1,
   },
   {
-    title: "talk2bee",
+    title: "",
     description: "Professional subjects with one-to-one online meeting.",
     urls: slide2,
   },
   {
-    title: "talk2bee",
+    title: "",
     description: "Real people interaction to enhance your learning process.",
     urls: slide3,
   },
   {
-    title: "talk2bee",
+    title: "",
     description: "The Lexical Approach to increase vocabulary.",
     urls: slide4,
   },

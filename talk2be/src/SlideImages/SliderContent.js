@@ -1,6 +1,5 @@
 import React from "react";
 import sliderImage from "./SliderImages";
-import bee from "../images/bee.jpg";
 
 function SliderContent(props) {
   return (

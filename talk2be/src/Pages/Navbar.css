@@ -45,12 +45,13 @@
     grid-gap: 50px;
     list-style: none;
     text-align: left;
-    width: 100vw;
+    width: 90vw;
     justify-content: end;
     margin-right: 2rem;
   }
 
   .nav-menu.active {
+    width: 100%;
     background: #1e0253;
     opacity: 0.8;
     left: 0;
@@ -101,8 +102,8 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 90vh;
+    width: 90vh;
+    height: 90vw;
     position: absolute;
     top: 80px;
     left: -100%;
@@ -231,7 +232,7 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90vw;
     height: 90vh;
     position: absolute;
     top: 80px;
@@ -363,6 +364,11 @@
       cursor: pointer;
       display: flex;
       margin-top: -10px;
+    }
+  }
+  @media screen and (max-device-width: 1366px), screen and (max-width: 322px) {
+    .navbar-logo img {
+      display: none;
     }
   }
 }
